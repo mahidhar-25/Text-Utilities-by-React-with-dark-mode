@@ -38,21 +38,13 @@ export default function NavBar(props) {
                 <a
                   className="nav-link active"
                   aria-current="page"
-                  href="/"
+                  href="#"
                   style={{ color: props.mode === "dark" ? "white" : "black" }}
                 >
                   Home
                 </a>
               </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="/"
-                  style={{ color: props.mode === "dark" ? "white" : "black" }}
-                >
-                  About us
-                </a>
-              </li>
+   
             </ul>
             {/* <form className="d-flex" role="search">
               <input
