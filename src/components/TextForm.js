@@ -68,7 +68,12 @@ export default function TextForm(props) {
       >
         <h3>Text summary</h3>
         <p>
-          No of words in text : {text.length > 0 ? text.split(" ").length : "0"}
+          No of words in text :{" "}
+          {text.length > 0
+            ? text.split(" ").filter((element) => {
+                return element.length > 0;
+              }).length
+            : "0"}
         </p>
         <p>No of characters in text : {text.length}</p>
         <p>
