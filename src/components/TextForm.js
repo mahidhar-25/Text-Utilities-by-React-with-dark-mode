@@ -41,14 +41,25 @@ export default function TextForm(props) {
             background: props.mode === "dark" ? "grey" : "white",
           }}
         ></textarea>
-        <button type="button" className="btn btn-primary m-3" onClick={toupper}>
+        <button
+          type="button"
+          disabled={text.length === 0}
+          className="btn btn-primary m-3"
+          onClick={toupper}
+        >
           convert to Uppercase
         </button>
-        <button type="button" className="btn btn-primary m-3" onClick={tolower}>
+        <button
+          type="button"
+          disabled={text.length === 0}
+          className="btn btn-primary m-3"
+          onClick={tolower}
+        >
           convert to Lowercase
         </button>
         <button
           type="button"
+          disabled={text.length === 0}
           className="btn btn-primary m-3"
           onClick={copytext}
         >
@@ -56,6 +67,7 @@ export default function TextForm(props) {
         </button>
         <button
           type="button"
+          disabled={text.length === 0}
           className="btn btn-primary m-3"
           onClick={cleantext}
         >
@@ -70,7 +82,7 @@ export default function TextForm(props) {
         <p>
           No of words in text :{" "}
           {text.length > 0
-            ? text.split(" ").filter((element) => {
+            ? text.split(/\s+/).filter((element) => {
                 return element.length > 0;
               }).length
             : "0"}
@@ -78,7 +90,7 @@ export default function TextForm(props) {
         <p>No of characters in text : {text.length}</p>
         <p>
           Avgtime to read text is :{" "}
-          {text.length > 0 ? 0.008 * text.split(" ").length : 0} sec
+          {text.length > 0 ? 0.008 * text.split(/\s+/).length : 0} sec
         </p>
         <h3>preview</h3>
         <p>{text.length > 0 ? text : "enter text above to  preview"}</p>
